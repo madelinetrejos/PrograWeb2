@@ -2,7 +2,7 @@
 
 # Reactividad en Vue 3
 
-   # Funciones reactive y ref / computed y watch 
+**Funciones reactive y ref / computed y watch**
 
 **Ejemplo Reactive**
  - useCounter devuelve una referencia reactiva (count) y una función (increment) para incrementar el contador.
