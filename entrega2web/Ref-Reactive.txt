@@ -1,0 +1,17 @@
+Diferencias entre las funciones Ref y Reactive en Vue.js
+
+## Reactive
+
+Utiliza `reactive` cuando necesites una colección de valores que deban ser reactivos. Por ejemplo, un objeto con la información de un usuario, metadatos o los campos de un formulario. Es importante utilizar valores compuestos y asegurarte de guardar siempre la referencia al objeto original para mantener la reactividad.
+
+- Al crear un objeto reactivo, Vue genera un Proxy del mismo para controlar las operaciones en sus propiedades, lo que permite interceptar get y set. Esto es crucial para mantener la reactividad del objeto.
+- Solo se pueden guardar valores compuestos con `reactive`, como objetos, arrays, maps, sets, etc. No se puede usar con valores primitivos.
+- No es posible cambiar la referencia de un objeto reactivo sin perder la reactividad. Por ejemplo, no se puede usar la desestructuración sin más.
+
+## Ref
+
+Usa `ref` cuando necesites tener piezas de estado más pequeñas que deban ser reactivas, como un flag que indique si hay autenticación (`isAuth`), el nombre del usuario conectado o el total a pagar de un carrito de la compra. Aunque `ref` es más versátil, recuerda que si lo utilizas con un objeto, al final estarás utilizando `reactive`, con todas sus características.
+
+- `ref` puede guardar cualquier valor, no solo primitivos, lo que la hace más polivalente que `reactive`.
+- La función `ref` crea un objeto que envuelve el valor reactivo, por lo que para acceder al valor debes utilizar la propiedad `value`.
+- A diferencia de `reactive`, con `ref` puedes reemplazar la referencia de un objeto sin perder la reactividad. De hecho, si creamos un objeto reactivo con `ref`, en realidad estaremos usando `reactive`.
