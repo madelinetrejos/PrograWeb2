@@ -4,22 +4,24 @@
 
    # Funciones reative y ref / computed y watch 
 
-- **En el primer ejemplo (Reactive)**
+- **Ejemplo Reactive**
  useCounter devuelve una referencia reactiva (count) y una función (increment) para incrementar el contador.
 
-- **En el segundo ejemplo (Ref)**
+- **Ejemplo Ref**
  useUser devuelve un objeto reactivo (user) que contiene información del usuario y una función (updateUser) para actualizar esa información.
 
 En ambos casos, el hook setup se utiliza para exponer los datos y funciones necesarios al componente de Vue.
 En el ejemplo de useUser, se utiliza watchEffect para observar los cambios en el objeto user y mostrarlos en la consola cada vez que se actualiza.
 
 - **Ejemplo computed**
+  
 Para este ejemplo: 
   - suma es una propiedad computada que calcula la suma de num1 y num2.
   - Los valores de num1 y num2 se pueden cambiar mediante dos inputs.
   - La suma se muestra en el párrafo debajo de los inputs y se actualizará automáticamente cada vez que cambien num1 o num2.
 
 - **Ejemplo watch**
+  
 Para este ejemplo: 
   - Se muestra un nombre en un párrafo.
   - El input permite cambiar el nombre.
